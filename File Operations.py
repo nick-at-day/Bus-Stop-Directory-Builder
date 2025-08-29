@@ -1,14 +1,18 @@
 import re
 import os
+import json
 from pathlib import Path
 from exiftool import ExifToolHelper
-
+from pprint import pprint
 
 class Photo_Entity:
     def __init__(self, stopNumber=None, stopKeywords=None, index=None):
         self.__stopNumber = stopNumber
         self.__keywords = stopKeywords if stopKeywords is not None else []
         self.__index = index
+
+    def getStopNumber(self):
+        return self.__stopNumber
 
     def addKeywords(self, keyword):
         if keyword not in self.__keywords:
@@ -17,20 +21,40 @@ class Photo_Entity:
     def getKeywordAtIndex(self, index):
         return self.__keywords[index]
     
-    def getAllKeywords(self):
+    def getAllKeywords(self): 
         return self.__keywords
     
     def getNumberOfKeys(self):
         return len(self.__keywords)
     
-    def returnStopNumberKeywordPair(self):
+    def returnKeywordStopNumberPair(self):
         return [[kw, self.__stopNumber] for kw in self.__keywords]
+    
+    def toDict(self):
+        return {
+            "Stop Number": self.__stopNumber,
+            "keywords": self.__keywords             
+        }
+    @classmethod
+    def dumpToJson(cls, photos, filename="keyList.json"):
+        allData = [photo.toDict() for photo in photos]
+        with open(filename, "w") as o:
+            json.dump(allData, o, indent=4)
+
 
 
 class Keyword_Entity:
     def __init__(self, label=None, stopsReferencing=None):
         self.__label = label
-        self.__stopsReferencing = stopsReferencing if stopsReferencing is not None else []
+        if stopsReferencing is None: 
+            self.__stopsReferencing = []
+        elif isinstance(stopsReferencing,list):
+            self.__stopsReferencing = stopsReferencing
+        else:
+            self.__stopsReferencing = [stopsReferencing]
+
+    def returnStops(self):
+        return self.__stopsReferencing
 
     def getStopsFromKeyword(self):
         if isinstance(self.__stopsReferencing, str):
@@ -38,10 +62,11 @@ class Keyword_Entity:
         allStops = []
         for stops in self.__stopsReferencing:
             allStops.append(stops)
-        return f"Stops referencing: {self.__label}: {allStops}"
+        return f"Stops referencing {self.__label}: {allStops}"
     
-    # def addStopsToKeyword(self, kw, stops):
-    #     if kw = 
+    def addStop(self, stop):
+        if stop not in self.__stopsReferencing:
+            self.__stopsReferencing.append(stop)
 
 photos = []
 
@@ -63,6 +88,7 @@ with ExifToolHelper() as et:
                 kw_clean.append(kw.replace("_",""))
             photos.append(Photo_Entity(fileName,kw_clean))
 
+Photo_Entity.dumpToJson(photos)
 
 # for localKeys in photos:
 #     print(localKeys.getAllKeywords()) # Making sure I can get all local keys out of one file
@@ -73,33 +99,19 @@ for k in photos:
     for keyword in k.getAllKeywords():
         all_keys.add(keyword)
 
+keyDict = {} 
 
-# for keys in all_keys:
-#     keyDict.append(Keyword_Entity(keys, "")) # initialize unique keyword entities with empty stop numbers
-
-
-
-# print(keyDict[1]) # Making sure I can get Keyword objects out of the key dict
-
-keyDict = [] # list of all keyword entities
-all_keyStopPairs = []
 
 for k in photos:
-    for i in k.returnStopNumberKeywordPair():
-        keyDict.append(Keyword_Entity(i[0],i[1])) # This is currently taking the unique list and pushing one keyword entity for every key / stop pair... There are 14 "fence" objects. Figure out how to check to see if the key already exists, then append, rather than creating new objects each time
+    for keyword, stopNum in k.returnKeywordStopNumberPair():
+        if keyword not in keyDict:
+            keyDict[keyword] = (Keyword_Entity(keyword, stopNum))
+            print("New keyword created:", keyword)
+            keyDict[keyword].addStop(stopNum)
+        else: 
+            keyDict.get(keyword).addStop([stopNum])
+            print("Added to existing)")
 
 
-for i in keyDict:
-    print(i.getStopsFromKeyword()) 
-
-# print(all_keyStopPairs)
-
-
-
-# Possible solution to the appending stops problem:
-
-# 1) Initialize all the empty keyword entities based on existing keyword
-# 2) In a for each loop for every key/stop pair:
-#     3) Iterate through all keyword_entities, calling a function that checks the label of each one
-#     4) when the label is found within the keyDict list, call a function that appends the stop to that keyword entity
-# 5) if the key/stop pair passes through the whole list of existing labels, create a new keyword entity with the key / stop pair
+for keys in keyDict:
+    print(keyDict[keys].getStopsFromKeyword())
