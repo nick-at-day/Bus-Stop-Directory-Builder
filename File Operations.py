@@ -33,7 +33,12 @@ class Keyword_Entity:
         self.__stopsReferencing = stopsReferencing if stopsReferencing is not None else []
 
     def getStopsFromKeyword(self):
-        return self.__stopsReferencing
+        if isinstance(self.__stopsReferencing, str):
+            self.__stopsReferencing = [self.__stopsReferencing]
+        allStops = []
+        for stops in self.__stopsReferencing:
+            allStops.append(stops)
+        return f"Stops referencing: {self.__label}: {allStops}"
     
     # def addStopsToKeyword(self, kw, stops):
     #     if kw = 
@@ -68,19 +73,23 @@ for k in photos:
     for keyword in k.getAllKeywords():
         all_keys.add(keyword)
 
-keyDict = [] # list of all keyword entities
 
-for keys in all_keys:
-    keyDict.append(Keyword_Entity(keys, "")) # initialize unique keyword entities with empty stop numbers
+# for keys in all_keys:
+#     keyDict.append(Keyword_Entity(keys, "")) # initialize unique keyword entities with empty stop numbers
 
 
 
 # print(keyDict[1]) # Making sure I can get Keyword objects out of the key dict
 
+keyDict = [] # list of all keyword entities
 all_keyStopPairs = []
 
 for k in photos:
     for i in k.returnStopNumberKeywordPair():
-        all_keyStopPairs.append(f"Keyword:{i[0]}  Stop Number: {i[1]}")
+        keyDict.append(Keyword_Entity(i[0],i[1]))
 
-print(all_keyStopPairs)
+
+for i in keyDict:
+    print(i.getStopsFromKeyword())
+
+# print(all_keyStopPairs)
