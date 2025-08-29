@@ -24,7 +24,7 @@ class Photo_Entity:
         return len(self.__keywords)
     
     def returnStopNumberKeywordPair(self):
-        return [[self.__stopNumber, kw] for kw in self.__keywords]
+        return [[kw, self.__stopNumber] for kw in self.__keywords]
 
 
 class Keyword_Entity:
@@ -34,17 +34,21 @@ class Keyword_Entity:
 
     def getStopsFromKeyword(self):
         return self.__stopsReferencing
+    
+    # def addStopsToKeyword(self, kw, stops):
+    #     if kw = 
 
 photos = []
 
 with ExifToolHelper() as et:
     for files in os.listdir("fileInputs/"):
         filePath = os.path.join("fileInputs/" + files)
+        fileName = os.path.splitext(files)
         for d in et.get_tags([filePath], ["IPTC:Keywords"]):
             keywords = d.get("IPTC:Keywords", [])
             if isinstance(keywords, str):
                 keywords = [keywords]
-            fileName = d["SourceFile"]
+            fileName = fileName[0]
             kw_clean = []
             for kw in keywords:
                 if kw=="onPage":
@@ -56,20 +60,27 @@ with ExifToolHelper() as et:
 
 
 # for localKeys in photos:
-#     print(localKeys.getAllKeywords())
+#     print(localKeys.getAllKeywords()) # Making sure I can get all local keys out of one file
 
-all_keys = set()
+all_keys = set() # note that the set is a built-in method for ensuring uniqueness in a list
 
 for k in photos:
     for keyword in k.getAllKeywords():
         all_keys.add(keyword)
 
-keyDict = []
+keyDict = [] # list of all keyword entities
 
 for keys in all_keys:
-    keyDict.append(Keyword_Entity(keys, ""))
+    keyDict.append(Keyword_Entity(keys, "")) # initialize unique keyword entities with empty stop numbers
 
-print(keyDict[1])
 
-# for k in photos:
-#     print(k.getAllKeywords())
+
+# print(keyDict[1]) # Making sure I can get Keyword objects out of the key dict
+
+all_keyStopPairs = []
+
+for k in photos:
+    for i in k.returnStopNumberKeywordPair():
+        all_keyStopPairs.append(f"Keyword:{i[0]}  Stop Number: {i[1]}")
+
+print(all_keyStopPairs)
