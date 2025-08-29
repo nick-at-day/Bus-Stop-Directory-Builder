@@ -86,10 +86,20 @@ all_keyStopPairs = []
 
 for k in photos:
     for i in k.returnStopNumberKeywordPair():
-        keyDict.append(Keyword_Entity(i[0],i[1]))
+        keyDict.append(Keyword_Entity(i[0],i[1])) # This is currently taking the unique list and pushing one keyword entity for every key / stop pair... There are 14 "fence" objects. Figure out how to check to see if the key already exists, then append, rather than creating new objects each time
 
 
 for i in keyDict:
-    print(i.getStopsFromKeyword())
+    print(i.getStopsFromKeyword()) 
 
 # print(all_keyStopPairs)
+
+
+
+# Possible solution to the appending stops problem:
+
+# 1) Initialize all the empty keyword entities based on existing keyword
+# 2) In a for each loop for every key/stop pair:
+#     3) Iterate through all keyword_entities, calling a function that checks the label of each one
+#     4) when the label is found within the keyDict list, call a function that appends the stop to that keyword entity
+# 5) if the key/stop pair passes through the whole list of existing labels, create a new keyword entity with the key / stop pair
