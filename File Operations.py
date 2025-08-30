@@ -11,9 +11,10 @@ import random
 sourceFilepath = "/Users/nicholasseitz/Pictures/Update Directory/"
 
 class Photo_Entity:
-    def __init__(self, stopNumber=None, stopKeywords=None, index=None):
+    def __init__(self, stopNumber=None, stopKeywords=None, photoWriting=None, index=None):
         self.__stopNumber = stopNumber
         self.__keywords = stopKeywords if stopKeywords is not None else []
+        self.__photoWriting = photoWriting if photoWriting is not None else []
         self.__index = index
 
     def getStopNumber(self):
@@ -38,8 +39,19 @@ class Photo_Entity:
     def toDict(self):
         return {
             "Stop Number": self.__stopNumber,
-            "keywords": self.__keywords             
+            "keywords": self.__keywords,
+            "writing": self.__photoWriting             
         }
+    
+    def ingestWriting(self,writing):
+        self.__photoWriting = writing
+        
+        # I think I would like to store the writing as a list within the class itself, so that I'm 
+        # having to marry the two data back together at different points in the process. The trick
+        # will be parsing the .md data into the class in a suitable way. 
+
+        # Some other weird problems will be footnotes and extraneous edge-case text. Maybe I'll just
+        # have to discipline myself to keep all the writing between the header and ## keywords lines.
     
     @classmethod
     def dumpToJson(cls, photos, filename="stopList.json"):
@@ -80,7 +92,14 @@ class Keyword_Entity:
             "Keyword": self.__label,
             "Stops": self.__stopsReferencing
         }
-
+    
+    def readExistingWriting():
+        pass
+        # I'm slightly less concerned about the formatting on this one, oddly. The alternating
+        # lines method is working well enough, it's just the same thing of copying the right
+        # kinds of data and ensuring it gets passed into a list. Using the alternating method
+        # will reflow it correctly and address that issue of it printing well. 
+ 
     @classmethod
     def dumpKeysToJson(cls, keys, filename="keyList.json"):
         allData = [photo.toDict() for photo in keys.values()]
@@ -106,7 +125,7 @@ with ExifToolHelper() as et:
                         continue
                     else:
                         fullKeys.append(kw)
-                photos[fileName] = (Photo_Entity(fileName[0],fullKeys))
+                photos[fileName[0]] = (Photo_Entity(stopNumber=fileName[0],stopKeywords=fullKeys))
             else:
                 continue
 
@@ -124,8 +143,29 @@ for k in photos.values():
             keyDict.get(keyword).addStop(stopNum)
             print("Added to existing)")
 
+
+for files in os.listdir(sourceFilepath):
+    filepath = os.path.join(sourceFilepath + files)
+    if "Stop Number" in files:
+        baseStop = files[12:]
+        baseStop = baseStop[:-3]
+        with open(filepath, "r") as f:
+            noteText = []
+            in_notes = False
+            for lines in f.read().splitlines():
+                if lines.strip() == "## Notes":
+                    in_notes = True
+                    continue
+                if lines.strip().startswith("## ") and in_notes:
+                    break
+                if in_notes and lines.strip():
+                    noteText.append(lines)
+            photos[baseStop].ingestWriting(noteText)
+
+        
 Photo_Entity.dumpToJson(photos)
 Keyword_Entity.dumpKeysToJson(keyDict)
+
 
 for p in photos.values():
     ceil = random.randint(5,15)
@@ -136,7 +176,10 @@ for p in photos.values():
     with open(f"{sourceFilepath}Stop Number {p.getStopNumber()}.md", "w") as f:
         f.write(f"# Stop {p.getStopNumber()}\n\n")
         f.write(f"![[{p.getStopNumber()}.jpg]]\n\n")
-        f.write(f"## Notes\n\n\n## Keywords\n\n")
+        f.write(f"## Notes\n\n")
+        for ps in loremText:
+            f.write(f"{ps}\n\n")
+        f.write(f"## Keywords\n\n")
         for kw in p.getAllKeywords():
             f.write(f"- [[{kw}]]\n")
 
