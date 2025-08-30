@@ -43,7 +43,8 @@ class Photo_Entity:
             "Stop Number": self.__stopNumber,
             "keywords": self.__keywords,
             "writing": self.__photoWriting,
-            "Date Created": str(self.__dateCreated)
+            "Date Created": str(self.__dateCreated),
+            "Index": self.__index
         }
     
     def ingestWriting(self,writing):
@@ -61,6 +62,10 @@ class Photo_Entity:
         allData = [photo.toDict() for photo in photos.values()]
         with open(filename, "w") as o:
             json.dump(allData, o, indent=4)
+
+    @classmethod
+    def createIndexValues(cls, photos):
+        pass
 
 class Keyword_Entity:
     def __init__(self, label=None, stopsReferencing=None):
@@ -109,18 +114,19 @@ class Keyword_Entity:
         with open(filename, "w") as o:
             json.dump(allData, o, indent=4)
 
-photos = {}
-all_keys = set()
-keyDict = {} 
+photos = {} # Dictionary with format "Stop name: <stop object>"
+all_keys = set() # All existing keywords
+keyDict = {} # Dictionary with format "Keyword: <keyword object>"
 
-with ExifToolHelper() as et:
+with ExifToolHelper() as et: # Metadata parsing function
     for files in os.listdir(sourceFilepath):
         filePath = os.path.join(sourceFilepath + files)
         fileName = os.path.splitext(files)
         if ".jpg" in files:
-            for d in et.get_tags([filePath], ["IPTC:Keywords", "EXIF:DateTimeOriginal"]):
+            for d in et.get_tags([filePath], ["IPTC:Keywords", "IPTC:Caption-Abstract", "EXIF:DateTimeOriginal"]):
                 keywords = d.get("IPTC:Keywords", [])
                 dateTime = d.get("EXIF:DateTimeOriginal", "")
+                index = int(d.get("IPTC:Caption-Abstract", ""))
                 fullDate = datetime.datetime(
                     int(dateTime[:4]),
                     int(dateTime[5:7]),
@@ -137,26 +143,23 @@ with ExifToolHelper() as et:
                         continue
                     else:
                         fullKeys.append(kw)
-                photos[fileName[0]] = (Photo_Entity(stopNumber=fileName[0],stopKeywords=fullKeys, dateCreated=fullDate))
+                photos[fileName[0]] = (Photo_Entity(stopNumber=fileName[0],stopKeywords=fullKeys, dateCreated=fullDate, index=index))
             else:
                 continue
 
-for k in photos.values():
+for k in photos.values(): # Create list of all keywords in photos
     for keyword in k.getAllKeywords():
         all_keys.add(keyword)
 
-for k in photos.values():
-    for keyword, stopNum in k.returnKeywordStopNumberPair():
-        if keyword not in keyDict:
-            keyDict[keyword] = (Keyword_Entity(keyword, stopNum))
-            print("New keyword created:", keyword)
-            # keyDict[keyword].addStop(stopNum)
-        else: 
-            keyDict.get(keyword).addStop(stopNum)
-            print("Added to existing)")
+for k in photos.values(): # Create keyword objects dictionary or append keywords to existing objeect
+        for keyword, stopNum in k.returnKeywordStopNumberPair():
+            if keyword not in keyDict:
+                keyDict[keyword] = (Keyword_Entity(keyword, stopNum))
+            else: 
+                keyDict.get(keyword).addStop(stopNum)
 
 
-for files in os.listdir(sourceFilepath):
+for files in os.listdir(sourceFilepath): # Ingest existing writing for stop files
     filepath = os.path.join(sourceFilepath + files)
     if "Stop Number" in files:
         baseStop = files[12:]
@@ -172,14 +175,19 @@ for files in os.listdir(sourceFilepath):
                     break
                 if in_notes and lines.strip():
                     noteText.append(lines)
-            photos[baseStop].ingestWriting(noteText)
+            try:
+                photos[baseStop].ingestWriting(noteText)
+            except:
+                print(f"Stop number: {baseStop} is not in collection")
+
+# <---- Ingest writing from keyword files function here ---->
 
         
 Photo_Entity.dumpToJson(photos)
 Keyword_Entity.dumpKeysToJson(keyDict)
 
 
-for p in photos.values():
+for p in photos.values(): # Write photo files
     ceil = random.randint(5,15)
     loremText = []
     while ceil >= 0:
@@ -195,7 +203,7 @@ for p in photos.values():
         for kw in p.getAllKeywords():
             f.write(f"- [[{kw}]]\n")
 
-for k in keyDict.values():
+for k in keyDict.values(): # Write keyword files
     ceil = random.randint(5,15)
     loremText = []
     while ceil >= 0:

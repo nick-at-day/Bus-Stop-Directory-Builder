@@ -11,8 +11,9 @@ with ExifToolHelper() as et:
         filePath = os.path.join(sourceFilepath + files)
         fileName = os.path.splitext(files)
         if ".jpg" in files:
-            for d in et.get_tags([filePath], ["IPTC:Keywords", "EXIF:DateTimeOriginal"]):
+            for d in et.get_tags([filePath], ["IPTC:Keywords", "IPTC:Caption-Abstract", "EXIF:DateTimeOriginal"]):
                 keywords = d.get("IPTC:Keywords", [])
+                index = d.get("IPTC:Caption-Abstract", "")
                 dateTime = d.get("EXIF:DateTimeOriginal", "")
                 fullDate = datetime.datetime(
                     int(dateTime[:4]),
@@ -30,7 +31,7 @@ with ExifToolHelper() as et:
                         continue
                     else:
                         fullKeys.append(kw)
-                print(fullDate)
+                print(index)
                 # photos[fileName[0]] = (Photo_Entity(stopNumber=fileName[0],stopKeywords=fullKeys))
             else:
                 continue
