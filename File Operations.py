@@ -7,14 +7,16 @@ from pprint import pprint
 from itertools import zip_longest
 import lorem
 import random
+import datetime
 
 sourceFilepath = "/Users/nicholasseitz/Pictures/Update Directory/"
 
 class Photo_Entity:
-    def __init__(self, stopNumber=None, stopKeywords=None, photoWriting=None, index=None):
+    def __init__(self, stopNumber=None, stopKeywords=None, photoWriting=None, index=None, dateCreated=None):
         self.__stopNumber = stopNumber
         self.__keywords = stopKeywords if stopKeywords is not None else []
         self.__photoWriting = photoWriting if photoWriting is not None else []
+        self.__dateCreated = dateCreated
         self.__index = index
 
     def getStopNumber(self):
@@ -40,7 +42,8 @@ class Photo_Entity:
         return {
             "Stop Number": self.__stopNumber,
             "keywords": self.__keywords,
-            "writing": self.__photoWriting             
+            "writing": self.__photoWriting,
+            "Date Created": str(self.__dateCreated)
         }
     
     def ingestWriting(self,writing):
@@ -115,8 +118,17 @@ with ExifToolHelper() as et:
         filePath = os.path.join(sourceFilepath + files)
         fileName = os.path.splitext(files)
         if ".jpg" in files:
-            for d in et.get_tags([filePath], ["IPTC:Keywords"]):
+            for d in et.get_tags([filePath], ["IPTC:Keywords", "EXIF:DateTimeOriginal"]):
                 keywords = d.get("IPTC:Keywords", [])
+                dateTime = d.get("EXIF:DateTimeOriginal", "")
+                fullDate = datetime.datetime(
+                    int(dateTime[:4]),
+                    int(dateTime[5:7]),
+                    int(dateTime[8:10]),
+                    int(dateTime[11:13]),
+                    int(dateTime[14:16]),
+                    int(dateTime[17:19])
+                )
                 if isinstance(keywords, str):
                     keywords = [keywords]
                 fullKeys = []
@@ -125,7 +137,7 @@ with ExifToolHelper() as et:
                         continue
                     else:
                         fullKeys.append(kw)
-                photos[fileName[0]] = (Photo_Entity(stopNumber=fileName[0],stopKeywords=fullKeys))
+                photos[fileName[0]] = (Photo_Entity(stopNumber=fileName[0],stopKeywords=fullKeys, dateCreated=fullDate))
             else:
                 continue
 
