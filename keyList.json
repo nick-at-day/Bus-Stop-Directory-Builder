@@ -1,549 +1,1767 @@
 [
     {
-        "Stop Number": "1390",
-        "keywords": [
-            "Industry",
-            "Overgrowth",
-            "Shadow",
-            "Types of Building"
+        "Keyword": "AI Edits",
+        "Stops": [
+            "1409",
+            "3343",
+            "761",
+            "1155",
+            "1864",
+            "462",
+            "1aBranch1"
         ]
     },
     {
-        "Stop Number": "758",
-        "keywords": [
-            "Fence",
-            "Picnic Table",
-            "Tree",
-            "City Landscape Element"
+        "Keyword": "Industry",
+        "Stops": [
+            "1390",
+            "3643"
         ]
     },
     {
-        "Stop Number": "1781",
-        "keywords": [
-            "Fence",
-            "Out Of Focus Foreground",
-            "Tree",
-            "City Landscape Element"
+        "Keyword": "Overgrowth",
+        "Stops": [
+            "1390",
+            "1752",
+            "3481",
+            "2768",
+            "2323"
         ]
     },
     {
-        "Stop Number": "1408",
-        "keywords": [
-            "Cars",
-            "Garage",
-            "Sunrise"
+        "Keyword": "Shadow",
+        "Stops": [
+            "1390",
+            "1838",
+            "2476",
+            "1abranch3"
         ]
     },
     {
-        "Stop Number": "2473",
-        "keywords": [
-            "Jehovah",
-            "Sign",
-            "s Witnesses"
+        "Keyword": "Field",
+        "Stops": [
+            "1186",
+            "3597"
         ]
     },
     {
-        "Stop Number": "3624",
-        "keywords": [
-            "Details",
-            "Hot",
-            "Lawnmower"
+        "Keyword": "Plants",
+        "Stops": [
+            "1186"
         ]
     },
     {
-        "Stop Number": "2472",
-        "keywords": [
-            "Sidewalk",
-            "Solar Panel",
-            "Surveillance Camera"
+        "Keyword": "Sunset",
+        "Stops": [
+            "1186"
         ]
     },
     {
-        "Stop Number": "762",
-        "keywords": [
-            "Flag",
-            "Intersection",
-            "Wrapped Up Object"
+        "Keyword": "Fence",
+        "Stops": [
+            "1838",
+            "758",
+            "1781",
+            "2248",
+            "2066",
+            "3635",
+            "3596",
+            "3636",
+            "2474",
+            "1292",
+            "2014",
+            "3643",
+            "2763",
+            "87Bypass",
+            "3481",
+            "930",
+            "3641",
+            "35",
+            "3922",
+            "34",
+            "645",
+            "1096-2",
+            "906",
+            "2635",
+            "1248",
+            "2768",
+            "1774"
         ]
     },
     {
-        "Stop Number": "3635",
-        "keywords": [
-            "Construction",
-            "Fence",
-            "No Trespassing",
-            "Sidewalk Ending",
-            "Surveillance Camera",
-            "City Landscape Element",
-            "Types of Signs"
+        "Keyword": "Security",
+        "Stops": [
+            "1838"
         ]
     },
     {
-        "Stop Number": "3596",
-        "keywords": [
-            "Construction",
-            "Fence",
-            "Private Property",
-            "Tree",
-            "City Landscape Element",
-            "Types of Signs"
+        "Keyword": "Abandoned",
+        "Stops": [
+            "1970",
+            "3343",
+            "1236",
+            "noStop-7",
+            "2763",
+            "2635",
+            "2768",
+            "432"
         ]
     },
     {
-        "Stop Number": "629",
-        "keywords": [
-            "Blurry Car",
-            "Sky",
-            "VCU",
-            "Vehicle Related"
+        "Keyword": "Hat",
+        "Stops": [
+            "1970"
         ]
     },
     {
-        "Stop Number": "3623",
-        "keywords": [
-            "Construction Netting",
-            "Gravel",
-            "Orange"
+        "Keyword": "Signpost",
+        "Stops": [
+            "1970"
         ]
     },
     {
-        "Stop Number": "1578",
-        "keywords": [
-            "Grass",
-            "Memorial",
-            "Sky"
+        "Keyword": "Ford",
+        "Stops": [
+            "1780"
         ]
     },
     {
-        "Stop Number": "761",
-        "keywords": [
-            "AI Edits",
-            "Car",
-            "Surveillance Camera",
-            "Telephone Pole",
-            "City Landscape Element",
-            "Vehicle Related"
+        "Keyword": "Uncertain Fruit",
+        "Stops": [
+            "1780"
         ]
     },
     {
-        "Stop Number": "760",
-        "keywords": [
-            "Car",
-            "Office park",
-            "Sky",
-            "Vehicle Related"
+        "Keyword": "Corporate Stuff",
+        "Stops": [
+            "2048",
+            "2729",
+            "2163",
+            "2162",
+            "1246",
+            "2633",
+            "2731",
+            "1aBranch1"
         ]
     },
     {
-        "Stop Number": "3636",
-        "keywords": [
-            "Fence",
-            "No Parking",
-            "Pole",
-            "City Landscape Element",
-            "Types of Signs"
+        "Keyword": "For rent",
+        "Stops": [
+            "2048"
         ]
     },
     {
-        "Stop Number": "2474",
-        "keywords": [
-            "Barbed Wire",
-            "Clouds",
-            "Fence",
-            "Radio Tower",
-            "City Landscape Element"
+        "Keyword": "Reshoot",
+        "Stops": [
+            "2048",
+            "3357",
+            "3592",
+            "62",
+            "3591",
+            "2729",
+            "3916",
+            "2764",
+            "3915",
+            "2763",
+            "3640",
+            "3922",
+            "2631",
+            "3511",
+            "724",
+            "3921",
+            "3702",
+            "907",
+            "2635",
+            "3477",
+            "723",
+            "1249",
+            "2230",
+            "69",
+            "1abranch2",
+            "3763"
         ]
     },
     {
-        "Stop Number": "3597",
-        "keywords": [
-            "Bridge",
-            "Field",
-            "River",
-            "Sidewalk Ending",
-            "Stairs",
-            "City Landscape Element"
+        "Keyword": "Church",
+        "Stops": [
+            "3342",
+            "3590",
+            "noStop-30",
+            "2761",
+            "105",
+            "1334",
+            "907"
         ]
     },
     {
-        "Stop Number": "1292",
-        "keywords": [
-            "Empty Sign",
-            "Fence",
-            "Sky",
-            "City Landscape Element"
+        "Keyword": "Crate Myrtle",
+        "Stops": [
+            "3342",
+            "3592",
+            "2411",
+            "1335",
+            "3913",
+            "1334",
+            "337",
+            "335"
         ]
     },
     {
-        "Stop Number": "3056",
-        "keywords": [
-            "Asphalt",
-            "Turn lane",
-            "Wall of Trees",
-            "City Landscape Element",
-            "Types of Composition / Picture"
+        "Keyword": "Picnic Table",
+        "Stops": [
+            "758"
         ]
     },
     {
-        "Stop Number": "248",
-        "keywords": [
-            "Guide Wire",
-            "Wire",
-            "City Landscape Element"
+        "Keyword": "Tree",
+        "Stops": [
+            "758",
+            "1781",
+            "2476",
+            "noStop-31",
+            "2729",
+            "3596",
+            "1250",
+            "2162",
+            "329",
+            "3041",
+            "853",
+            "3480",
+            "3713",
+            "1577",
+            "1576",
+            "1abranch3"
         ]
     },
     {
-        "Stop Number": "3478",
-        "keywords": [
-            "Backside of Street Signs",
-            "Clouds",
-            "Garbage Truck",
-            "Types of Signs"
+        "Keyword": "Hospital",
+        "Stops": [
+            "770",
+            "1863",
+            "3702"
         ]
     },
     {
-        "Stop Number": "3479",
-        "keywords": [
-            "Detour",
-            "Orange Sign",
-            "Types of Signs"
+        "Keyword": "Public Housing",
+        "Stops": [
+            "770",
+            "2330",
+            "185"
         ]
     },
     {
-        "Stop Number": "261",
-        "keywords": [
-            "Bus Infrastructure",
-            "Federal Reserve",
-            "Flags",
-            "Memorial",
-            "Skyline",
-            "Specific Subjects"
+        "Keyword": "Lamps",
+        "Stops": [
+            "981",
+            "1335"
         ]
     },
     {
-        "Stop Number": "329",
-        "keywords": [
-            "Sky",
-            "Tree"
+        "Keyword": "Contrast",
+        "Stops": [
+            "3343"
         ]
     },
     {
-        "Stop Number": "3643",
-        "keywords": [
-            "Clouds",
-            "Fence",
-            "Industry",
-            "City Landscape Element",
-            "Types of Building"
+        "Keyword": "Parking Lot",
+        "Stops": [
+            "3343",
+            "3341",
+            "2066",
+            "noStop-31",
+            "2163",
+            "3916",
+            "2014",
+            "1865",
+            "2161",
+            "853",
+            "3897",
+            "906",
+            "3663",
+            "noStop-29",
+            "2731"
         ]
     },
     {
-        "Stop Number": "3642",
-        "keywords": [
-            "Bottlecaps",
-            "Details"
+        "Keyword": "Sharp Contrast",
+        "Stops": [
+            "3343"
         ]
     },
     {
-        "Stop Number": "3044",
-        "keywords": [
-            "Telephone Infrastructure",
-            "Telephone Pole",
-            "City Landscape Element"
+        "Keyword": "Sharp Light",
+        "Stops": [
+            "3343"
         ]
     },
     {
-        "Stop Number": "1335",
-        "keywords": [
-            "Crate Myrtle",
-            "Lamps",
-            "Sparse Compistion"
+        "Keyword": "Shopping Cart Corral",
+        "Stops": [
+            "3343"
         ]
     },
     {
-        "Stop Number": "11",
-        "keywords": [
-            "Bridge",
-            "Edited",
-            "Graffiti",
-            "Guardrail",
-            "James Monroe Building",
-            "Skyline",
-            "Tilt Shift",
-            "Train Tracks",
-            "City Landscape Element",
-            "Specific Subjects",
-            "Types of Composition / Picture"
+        "Keyword": "Store",
+        "Stops": [
+            "3343",
+            "3763"
         ]
     },
     {
-        "Stop Number": "3481",
-        "keywords": [
-            "Fence",
-            "Overgrowth",
-            "City Landscape Element"
+        "Keyword": "Road Work",
+        "Stops": [
+            "3357"
         ]
     },
     {
-        "Stop Number": "3480",
-        "keywords": [
-            "House",
-            "Land Boat",
-            "Tree"
+        "Keyword": "Speed Limit",
+        "Stops": [
+            "3357"
         ]
     },
     {
-        "Stop Number": "3641",
-        "keywords": [
-            "Fence",
-            "Shed",
-            "City Landscape Element"
+        "Keyword": "Traffic Cone",
+        "Stops": [
+            "3357",
+            "2762",
+            "2636"
         ]
     },
     {
-        "Stop Number": "1320",
-        "keywords": [
-            "Dollar General",
-            "Guide Wire",
-            "Store Sign",
-            "City Landscape Element"
+        "Keyword": "Out Of Focus Foreground",
+        "Stops": [
+            "1781"
         ]
     },
     {
-        "Stop Number": "1334",
-        "keywords": [
-            "Bricks",
-            "Church",
-            "Crate Myrtle",
-            "Types of Building"
+        "Keyword": "Bricks",
+        "Stops": [
+            "62",
+            "1334",
+            "443",
+            "391"
         ]
     },
     {
-        "Stop Number": "35",
-        "keywords": [
-            "Fence",
-            "Out Of Focus Ground",
-            "Sunrise",
-            "City Landscape Element"
+        "Keyword": "Cars",
+        "Stops": [
+            "1408"
         ]
     },
     {
-        "Stop Number": "3664",
-        "keywords": [
-            "Detour",
-            "Mailbox",
-            "Sidewalk",
-            "Types of Signs"
+        "Keyword": "Garage",
+        "Stops": [
+            "1408",
+            "1865"
         ]
     },
     {
-        "Stop Number": "256",
-        "keywords": [
-            "Crosswalk",
-            "Grass",
-            "Gravel"
+        "Keyword": "Sunrise",
+        "Stops": [
+            "1408",
+            "3590",
+            "64",
+            "1865",
+            "1452",
+            "35",
+            "1689",
+            "31",
+            "1830",
+            "80",
+            "1577",
+            "1576",
+            "68",
+            "1412",
+            "3833",
+            "185"
         ]
     },
     {
-        "Stop Number": "34",
-        "keywords": [
-            "Chimney",
-            "Fence",
-            "City Landscape Element"
+        "Keyword": "Jehovahs Witnesses",
+        "Stops": [
+            "2473"
         ]
     },
     {
-        "Stop Number": "645",
-        "keywords": [
-            "Apartments",
-            "Fence",
-            "Rowhouses",
-            "Sidewalk",
-            "City Landscape Element",
-            "Types of Building"
+        "Keyword": "Sign",
+        "Stops": [
+            "2473"
         ]
     },
     {
-        "Stop Number": "3706",
-        "keywords": [
-            "No Outlet",
-            "Telephone Pole",
-            "Wire Vomit",
-            "City Landscape Element",
-            "Types of Signs"
+        "Keyword": "Street Lights",
+        "Stops": [
+            "3037",
+            "2603",
+            "1577"
         ]
     },
     {
-        "Stop Number": "3663",
-        "keywords": [
-            "Barbed Wire",
-            "Parking Lot",
-            "Prohibited",
-            "City Landscape Element"
+        "Keyword": "Trees",
+        "Stops": [
+            "3037",
+            "2248",
+            "1248",
+            "2732",
+            "2047"
         ]
     },
     {
-        "Stop Number": "696",
-        "keywords": [
-            "Apartments",
-            "Bus Infrastructure",
-            "Types of Building"
+        "Keyword": "Map",
+        "Stops": [
+            "3341"
         ]
     },
     {
-        "Stop Number": "30",
-        "keywords": [
-            "Sky"
+        "Keyword": "Mural",
+        "Stops": [
+            "3341"
         ]
     },
     {
-        "Stop Number": "1116",
-        "keywords": [
-            "Asphalt",
-            "Blue Sky",
-            "Bus Infrastructure",
-            "On Ground View",
-            "Reshoot",
-            "Stoplights",
-            "City Landscape Element"
+        "Keyword": "Virginia",
+        "Stops": [
+            "3341"
         ]
     },
     {
-        "Stop Number": "247",
-        "keywords": [
-            "Guide Wire",
-            "Mysterious Building",
-            "Telephone Pole",
-            "City Landscape Element"
+        "Keyword": "Details",
+        "Stops": [
+            "3624",
+            "3642"
         ]
     },
     {
-        "Stop Number": "722",
-        "keywords": [
-            "Bus Infrastructure",
-            "Five Gallon Bucket"
+        "Keyword": "Hot",
+        "Stops": [
+            "3624"
         ]
     },
     {
-        "Stop Number": "31",
-        "keywords": [
-            "Curb cut",
-            "Shadow Field",
-            "Sunrise"
+        "Keyword": "Lawnmower",
+        "Stops": [
+            "3624"
         ]
     },
     {
-        "Stop Number": "25",
-        "keywords": [
-            "Cut Grass",
-            "Sidewalk"
+        "Keyword": "Sidewalk",
+        "Stops": [
+            "2472",
+            "2764",
+            "3664",
+            "2631",
+            "876",
+            "25Defunct",
+            "645",
+            "3310",
+            "2323",
+            "2732",
+            "2487",
+            "69",
+            "3833",
+            "2330"
         ]
     },
     {
-        "Stop Number": "1414",
-        "keywords": [
-            "For Sale",
-            "Phone Number",
-            "Real Estate"
+        "Keyword": "Solar Panel",
+        "Stops": [
+            "2472"
         ]
     },
     {
-        "Stop Number": "2323",
-        "keywords": [
-            "Dog poop",
-            "Overgrowth",
-            "Sidewalk"
+        "Keyword": "Surveillance Camera",
+        "Stops": [
+            "2472",
+            "3635",
+            "761"
         ]
     },
     {
-        "Stop Number": "369",
-        "keywords": [
-            "Family Dollar",
-            "Southside Plaza",
-            "Wire Vomit"
+        "Keyword": "Mattress",
+        "Stops": [
+            "3591"
         ]
     },
     {
-        "Stop Number": "632",
-        "keywords": [
-            "Apartments",
-            "Crosswalk",
-            "Dorm",
-            "Telephone Pole",
-            "City Landscape Element",
-            "Types of Building"
+        "Keyword": "Bush",
+        "Stops": [
+            "1355",
+            "494",
+            "1aBranch1",
+            "391"
         ]
     },
     {
-        "Stop Number": "579",
-        "keywords": [
-            "Broken Things",
-            "Telephone Pole",
-            "City Landscape Element"
+        "Keyword": "Haze",
+        "Stops": [
+            "1355",
+            "noStop-19",
+            "441"
         ]
     },
     {
-        "Stop Number": "1774",
-        "keywords": [
-            "Fence",
-            "Occluded Sign",
-            "City Landscape Element"
+        "Keyword": "Car",
+        "Stops": [
+            "2476",
+            "761",
+            "760",
+            "3913",
+            "913"
         ]
     },
     {
-        "Stop Number": "3639",
-        "keywords": [
-            "AC Unit",
-            "Foam"
+        "Keyword": "ICA",
+        "Stops": [
+            "428"
         ]
     },
     {
-        "Stop Number": "3211",
-        "keywords": [
-            "Occluded Sign",
-            "Telephone Pole",
-            "City Landscape Element"
+        "Keyword": "Pulse Lane",
+        "Stops": [
+            "428"
         ]
     },
     {
-        "Stop Number": "1412",
-        "keywords": [
-            "Apartments",
-            "Sunrise",
-            "Types of Building"
+        "Keyword": "Sky",
+        "Stops": [
+            "428",
+            "629",
+            "1578",
+            "760",
+            "1292",
+            "3917",
+            "329",
+            "30"
         ]
     },
     {
-        "Stop Number": "3359",
-        "keywords": [
-            "Cut Grass",
-            "Electrical Box"
+        "Keyword": "Boarded Windows",
+        "Stops": [
+            "945"
         ]
     },
     {
-        "Stop Number": "391",
-        "keywords": [
-            "Bricks",
-            "Bush",
-            "Window"
+        "Keyword": "Construction",
+        "Stops": [
+            "945",
+            "3635",
+            "3596",
+            "noStop-6",
+            "noStop-5",
+            "1096-2",
+            "949"
         ]
     },
     {
-        "Stop Number": "1413",
-        "keywords": [
-            "Apartments",
-            "Iconic Richmond",
-            "Types of Building"
+        "Keyword": "Flat",
+        "Stops": [
+            "945"
         ]
     },
     {
-        "Stop Number": "1389",
-        "keywords": [
-            "Detour",
-            "On Ground View",
-            "Stoplights",
-            "City Landscape Element",
-            "Types of Signs"
+        "Keyword": "Not At a Stop",
+        "Stops": [
+            "noStop-30",
+            "noStop-31",
+            "noStop-19",
+            "noStop-7",
+            "noStop-6",
+            "noStop-5",
+            "noStop-8",
+            "noStop-9",
+            "noStop-29",
+            "noStop-11",
+            "noStop-10",
+            "noStop-12"
+        ]
+    },
+    {
+        "Keyword": "Reflection Play",
+        "Stops": [
+            "noStop-30",
+            "98"
+        ]
+    },
+    {
+        "Keyword": "Speed Hump",
+        "Stops": [
+            "noStop-31",
+            "noStop-19"
+        ]
+    },
+    {
+        "Keyword": "Hazy",
+        "Stops": [
+            "noStop-19"
+        ]
+    },
+    {
+        "Keyword": "Humidity",
+        "Stops": [
+            "noStop-19"
+        ]
+    },
+    {
+        "Keyword": "No Trespassing",
+        "Stops": [
+            "3635"
+        ]
+    },
+    {
+        "Keyword": "Sidewalk Ending",
+        "Stops": [
+            "3635",
+            "3597",
+            "3906"
+        ]
+    },
+    {
+        "Keyword": "Playground",
+        "Stops": [
+            "64",
+            "853"
+        ]
+    },
+    {
+        "Keyword": "School",
+        "Stops": [
+            "64",
+            "3385",
+            "noStop-6"
+        ]
+    },
+    {
+        "Keyword": "Private Property",
+        "Stops": [
+            "3596"
+        ]
+    },
+    {
+        "Keyword": "Blurry Car",
+        "Stops": [
+            "629"
+        ]
+    },
+    {
+        "Keyword": "VCU",
+        "Stops": [
+            "629",
+            "3511",
+            "446",
+            "2487"
+        ]
+    },
+    {
+        "Keyword": "Abandoned Car",
+        "Stops": [
+            "1752"
+        ]
+    },
+    {
+        "Keyword": "Faded signs",
+        "Stops": [
+            "1752"
+        ]
+    },
+    {
+        "Keyword": "Summer",
+        "Stops": [
+            "1752"
+        ]
+    },
+    {
+        "Keyword": "Construction Netting",
+        "Stops": [
+            "3623"
+        ]
+    },
+    {
+        "Keyword": "Gravel",
+        "Stops": [
+            "3623",
+            "256"
+        ]
+    },
+    {
+        "Keyword": "Orange",
+        "Stops": [
+            "3623"
+        ]
+    },
+    {
+        "Keyword": "Abandoned House",
+        "Stops": [
+            "1236"
+        ]
+    },
+    {
+        "Keyword": "Broken Things",
+        "Stops": [
+            "1236",
+            "2763",
+            "2635",
+            "3310",
+            "579"
+        ]
+    },
+    {
+        "Keyword": "Grass",
+        "Stops": [
+            "1578",
+            "2764",
+            "2014",
+            "1247",
+            "256",
+            "337",
+            "723"
+        ]
+    },
+    {
+        "Keyword": "Memorial",
+        "Stops": [
+            "1578"
+        ]
+    },
+    {
+        "Keyword": "Telephone Pole",
+        "Stops": [
+            "761",
+            "1864",
+            "3044",
+            "1863",
+            "1452",
+            "929",
+            "3706",
+            "247",
+            "632",
+            "579",
+            "3211"
+        ]
+    },
+    {
+        "Keyword": "Office park",
+        "Stops": [
+            "760"
+        ]
+    },
+    {
+        "Keyword": "Football",
+        "Stops": [
+            "3385"
+        ]
+    },
+    {
+        "Keyword": "Walking Man Sign",
+        "Stops": [
+            "3385",
+            "3702"
+        ]
+    },
+    {
+        "Keyword": "No Parking",
+        "Stops": [
+            "3636",
+            "441",
+            "2634"
+        ]
+    },
+    {
+        "Keyword": "Pole",
+        "Stops": [
+            "3636"
+        ]
+    },
+    {
+        "Keyword": "Barbed Wire",
+        "Stops": [
+            "2474",
+            "3663"
+        ]
+    },
+    {
+        "Keyword": "Clouds",
+        "Stops": [
+            "2474",
+            "3478",
+            "2603",
+            "3643",
+            "3819"
+        ]
+    },
+    {
+        "Keyword": "Radio Tower",
+        "Stops": [
+            "2474",
+            "448"
+        ]
+    },
+    {
+        "Keyword": "Bridge",
+        "Stops": [
+            "3597",
+            "2634"
+        ]
+    },
+    {
+        "Keyword": "River",
+        "Stops": [
+            "3597"
+        ]
+    },
+    {
+        "Keyword": "Stairs",
+        "Stops": [
+            "3597"
+        ]
+    },
+    {
+        "Keyword": "Tricolor",
+        "Stops": [
+            "98",
+            "3916",
+            "3915",
+            "3914",
+            "2636",
+            "signOnBroadNoNumber",
+            "3832"
+        ]
+    },
+    {
+        "Keyword": "Window",
+        "Stops": [
+            "98",
+            "2761",
+            "2633",
+            "391"
+        ]
+    },
+    {
+        "Keyword": "Electrical Box",
+        "Stops": [
+            "2163",
+            "912",
+            "3359"
+        ]
+    },
+    {
+        "Keyword": "Crosswalk",
+        "Stops": [
+            "3916",
+            "1246",
+            "3041",
+            "2411",
+            "256",
+            "494",
+            "632"
+        ]
+    },
+    {
+        "Keyword": "Empty Sign",
+        "Stops": [
+            "1292"
+        ]
+    },
+    {
+        "Keyword": "Asphalt",
+        "Stops": [
+            "2764",
+            "3056",
+            "2161",
+            "723"
+        ]
+    },
+    {
+        "Keyword": "Bokeh",
+        "Stops": [
+            "2764",
+            "3913",
+            "929"
+        ]
+    },
+    {
+        "Keyword": "Gutter",
+        "Stops": [
+            "2764"
+        ]
+    },
+    {
+        "Keyword": "Construction Barrel",
+        "Stops": [
+            "noStop-6"
+        ]
+    },
+    {
+        "Keyword": "Camera",
+        "Stops": [
+            "3917",
+            "443"
+        ]
+    },
+    {
+        "Keyword": "Turn lane",
+        "Stops": [
+            "3056"
+        ]
+    },
+    {
+        "Keyword": "Wall of Trees",
+        "Stops": [
+            "3056"
+        ]
+    },
+    {
+        "Keyword": "Bench",
+        "Stops": [
+            "2162"
+        ]
+    },
+    {
+        "Keyword": "Car Vomit",
+        "Stops": [
+            "3915",
+            "3906",
+            "1576"
+        ]
+    },
+    {
+        "Keyword": "Backside of Street Signs",
+        "Stops": [
+            "1864",
+            "3478",
+            "2762",
+            "3906",
+            "1206"
+        ]
+    },
+    {
+        "Keyword": "Mysterious Light",
+        "Stops": [
+            "1864",
+            "2014",
+            "105",
+            "3897"
+        ]
+    },
+    {
+        "Keyword": "Guide Wire",
+        "Stops": [
+            "248",
+            "1320",
+            "247"
+        ]
+    },
+    {
+        "Keyword": "Wire",
+        "Stops": [
+            "248",
+            "929"
+        ]
+    },
+    {
+        "Keyword": "Garbage Truck",
+        "Stops": [
+            "3478"
+        ]
+    },
+    {
+        "Keyword": "Fire Hydrant",
+        "Stops": [
+            "1247"
+        ]
+    },
+    {
+        "Keyword": "Powerlines",
+        "Stops": [
+            "1247",
+            "462",
+            "2432"
+        ]
+    },
+    {
+        "Keyword": "Circle",
+        "Stops": [
+            "1246"
+        ]
+    },
+    {
+        "Keyword": "Mysterious Window",
+        "Stops": [
+            "1246"
+        ]
+    },
+    {
+        "Keyword": "Working",
+        "Stops": [
+            "noStop-5",
+            "1096-2",
+            "441"
+        ]
+    },
+    {
+        "Keyword": "Detour",
+        "Stops": [
+            "3479",
+            "3664",
+            "1389"
+        ]
+    },
+    {
+        "Keyword": "Orange Sign",
+        "Stops": [
+            "3479"
+        ]
+    },
+    {
+        "Keyword": "Lightpost",
+        "Stops": [
+            "1865"
+        ]
+    },
+    {
+        "Keyword": "Intersection",
+        "Stops": [
+            "2411",
+            "762Defunct"
+        ]
+    },
+    {
+        "Keyword": "Evergreen Tree",
+        "Stops": [
+            "2603"
+        ]
+    },
+    {
+        "Keyword": "Ruin",
+        "Stops": [
+            "2763",
+            "2635"
+        ]
+    },
+    {
+        "Keyword": "Mysterious Object",
+        "Stops": [
+            "2762",
+            "2636"
+        ]
+    },
+    {
+        "Keyword": "Water",
+        "Stops": [
+            "2762",
+            "2636"
+        ]
+    },
+    {
+        "Keyword": "Dog",
+        "Stops": [
+            "87Bypass"
+        ]
+    },
+    {
+        "Keyword": "Bottlecaps",
+        "Stops": [
+            "3642"
+        ]
+    },
+    {
+        "Keyword": "Tree Divided by Powerline",
+        "Stops": [
+            "462",
+            "80"
+        ]
+    },
+    {
+        "Keyword": "Telephone Infrastructure",
+        "Stops": [
+            "3044"
+        ]
+    },
+    {
+        "Keyword": "Foreboading Elements",
+        "Stops": [
+            "853",
+            "876",
+            "manchester"
+        ]
+    },
+    {
+        "Keyword": "Sparse Compistion",
+        "Stops": [
+            "1335"
+        ]
+    },
+    {
+        "Keyword": "Skyscraper",
+        "Stops": [
+            "448"
+        ]
+    },
+    {
+        "Keyword": "Stoplights",
+        "Stops": [
+            "448",
+            "1206",
+            "1389"
+        ]
+    },
+    {
+        "Keyword": "Street signs",
+        "Stops": [
+            "448",
+            "3923"
+        ]
+    },
+    {
+        "Keyword": "Tower",
+        "Stops": [
+            "448"
+        ]
+    },
+    {
+        "Keyword": "Begonias",
+        "Stops": [
+            "3913",
+            "3713"
+        ]
+    },
+    {
+        "Keyword": "Car Reflector",
+        "Stops": [
+            "3913"
+        ]
+    },
+    {
+        "Keyword": "Flowers",
+        "Stops": [
+            "3913",
+            "3713",
+            "725"
+        ]
+    },
+    {
+        "Keyword": "House",
+        "Stops": [
+            "3480",
+            "335"
+        ]
+    },
+    {
+        "Keyword": "Land Boat",
+        "Stops": [
+            "3480"
+        ]
+    },
+    {
+        "Keyword": "Angel",
+        "Stops": [
+            "2761"
+        ]
+    },
+    {
+        "Keyword": "Stained Glass",
+        "Stops": [
+            "2761"
+        ]
+    },
+    {
+        "Keyword": "Ivy",
+        "Stops": [
+            "930"
+        ]
+    },
+    {
+        "Keyword": "Shed",
+        "Stops": [
+            "3641"
+        ]
+    },
+    {
+        "Keyword": "Bus Infrastructure",
+        "Stops": [
+            "1863",
+            "722"
+        ]
+    },
+    {
+        "Keyword": "Fast Food",
+        "Stops": [
+            "3906"
+        ]
+    },
+    {
+        "Keyword": "Dollar General",
+        "Stops": [
+            "1320"
+        ]
+    },
+    {
+        "Keyword": "Store Sign",
+        "Stops": [
+            "1320"
+        ]
+    },
+    {
+        "Keyword": "Silhouette",
+        "Stops": [
+            "1452"
+        ]
+    },
+    {
+        "Keyword": "Manhole",
+        "Stops": [
+            "2142"
+        ]
+    },
+    {
+        "Keyword": "Road Markings",
+        "Stops": [
+            "2142"
+        ]
+    },
+    {
+        "Keyword": "Out Of Focus Ground",
+        "Stops": [
+            "35"
+        ]
+    },
+    {
+        "Keyword": "Blank Wall",
+        "Stops": [
+            "2432"
+        ]
+    },
+    {
+        "Keyword": "Chimney",
+        "Stops": [
+            "2432",
+            "34"
+        ]
+    },
+    {
+        "Keyword": "Graffiti",
+        "Stops": [
+            "2432"
+        ]
+    },
+    {
+        "Keyword": "Old House",
+        "Stops": [
+            "2432"
+        ]
+    },
+    {
+        "Keyword": "Rust",
+        "Stops": [
+            "3923"
+        ]
+    },
+    {
+        "Keyword": "Weathered",
+        "Stops": [
+            "3923"
+        ]
+    },
+    {
+        "Keyword": "truck",
+        "Stops": [
+            "3923"
+        ]
+    },
+    {
+        "Keyword": "Mailbox",
+        "Stops": [
+            "3664",
+            "769"
+        ]
+    },
+    {
+        "Keyword": "Wall of Foliage",
+        "Stops": [
+            "929"
+        ]
+    },
+    {
+        "Keyword": "Stickers",
+        "Stops": [
+            "2631"
+        ]
+    },
+    {
+        "Keyword": "CBS6 Tower",
+        "Stops": [
+            "2633",
+            "2634"
+        ]
+    },
+    {
+        "Keyword": "No Outlet",
+        "Stops": [
+            "876",
+            "3706"
+        ]
+    },
+    {
+        "Keyword": "Cut Grass",
+        "Stops": [
+            "25Defunct",
+            "3359"
+        ]
+    },
+    {
+        "Keyword": "Apartments",
+        "Stops": [
+            "645",
+            "913",
+            "632",
+            "1412",
+            "1413"
+        ]
+    },
+    {
+        "Keyword": "Rowhouses",
+        "Stops": [
+            "645"
+        ]
+    },
+    {
+        "Keyword": "Free Library",
+        "Stops": [
+            "3049"
+        ]
+    },
+    {
+        "Keyword": "Rubbish",
+        "Stops": [
+            "3049"
+        ]
+    },
+    {
+        "Keyword": "Cell Phone Tower",
+        "Stops": [
+            "1689"
+        ]
+    },
+    {
+        "Keyword": "No Littering",
+        "Stops": [
+            "1689"
+        ]
+    },
+    {
+        "Keyword": "Bike Lane",
+        "Stops": [
+            "335"
+        ]
+    },
+    {
+        "Keyword": "Planter",
+        "Stops": [
+            "3897"
+        ]
+    },
+    {
+        "Keyword": "Alleyway",
+        "Stops": [
+            "725"
+        ]
+    },
+    {
+        "Keyword": "Tilt Shift",
+        "Stops": [
+            "725"
+        ]
+    },
+    {
+        "Keyword": "Emergency",
+        "Stops": [
+            "446"
+        ]
+    },
+    {
+        "Keyword": "Wire Vomit",
+        "Stops": [
+            "3706",
+            "369"
+        ]
+    },
+    {
+        "Keyword": "Color Pop",
+        "Stops": [
+            "877"
+        ]
+    },
+    {
+        "Keyword": "Foliage",
+        "Stops": [
+            "877"
+        ]
+    },
+    {
+        "Keyword": "Bike",
+        "Stops": [
+            "913"
+        ]
+    },
+    {
+        "Keyword": "Lake",
+        "Stops": [
+            "912"
+        ]
+    },
+    {
+        "Keyword": "Convenience Store",
+        "Stops": [
+            "906",
+            "432",
+            "1830",
+            "68"
+        ]
+    },
+    {
+        "Keyword": "Puddle",
+        "Stops": [
+            "906"
+        ]
+    },
+    {
+        "Keyword": "Prohibited",
+        "Stops": [
+            "3663"
+        ]
+    },
+    {
+        "Keyword": "Mysterious Building",
+        "Stops": [
+            "443",
+            "247"
+        ]
+    },
+    {
+        "Keyword": "Snake Plant",
+        "Stops": [
+            "494"
+        ]
+    },
+    {
+        "Keyword": "Mist",
+        "Stops": [
+            "441"
+        ]
+    },
+    {
+        "Keyword": "Five Gallon Bucket",
+        "Stops": [
+            "722"
+        ]
+    },
+    {
+        "Keyword": "Birds",
+        "Stops": [
+            "2768"
+        ]
+    },
+    {
+        "Keyword": "New Construction",
+        "Stops": [
+            "2768"
+        ]
+    },
+    {
+        "Keyword": "Sofa",
+        "Stops": [
+            "2768"
+        ]
+    },
+    {
+        "Keyword": "Curb cut",
+        "Stops": [
+            "31"
+        ]
+    },
+    {
+        "Keyword": "Shadow Field",
+        "Stops": [
+            "31",
+            "1577"
+        ]
+    },
+    {
+        "Keyword": "Curve",
+        "Stops": [
+            "2634"
+        ]
+    },
+    {
+        "Keyword": "For Sale",
+        "Stops": [
+            "1414"
+        ]
+    },
+    {
+        "Keyword": "Phone Number",
+        "Stops": [
+            "1414"
+        ]
+    },
+    {
+        "Keyword": "Real Estate",
+        "Stops": [
+            "1414"
+        ]
+    },
+    {
+        "Keyword": "Dog poop",
+        "Stops": [
+            "2323"
+        ]
+    },
+    {
+        "Keyword": "Family Dollar",
+        "Stops": [
+            "369"
+        ]
+    },
+    {
+        "Keyword": "Southside Plaza",
+        "Stops": [
+            "369"
+        ]
+    },
+    {
+        "Keyword": "Bamboo",
+        "Stops": [
+            "2732"
+        ]
+    },
+    {
+        "Keyword": "Closed",
+        "Stops": [
+            "432",
+            "68"
+        ]
+    },
+    {
+        "Keyword": "Padlock",
+        "Stops": [
+            "432"
+        ]
+    },
+    {
+        "Keyword": "Scooter",
+        "Stops": [
+            "2487"
+        ]
+    },
+    {
+        "Keyword": "Flag",
+        "Stops": [
+            "762Defunct"
+        ]
+    },
+    {
+        "Keyword": "Wrapped Up Object",
+        "Stops": [
+            "762Defunct"
+        ]
+    },
+    {
+        "Keyword": "Chair",
+        "Stops": [
+            "69"
+        ]
+    },
+    {
+        "Keyword": "Occluded Vehicle",
+        "Stops": [
+            "69",
+            "961"
+        ]
+    },
+    {
+        "Keyword": "Dorm",
+        "Stops": [
+            "632"
+        ]
+    },
+    {
+        "Keyword": "UPS Box",
+        "Stops": [
+            "961"
+        ]
+    },
+    {
+        "Keyword": "Emptiness",
+        "Stops": [
+            "oldStop"
+        ]
+    },
+    {
+        "Keyword": "Machine",
+        "Stops": [
+            "949"
+        ]
+    },
+    {
+        "Keyword": "Pipe",
+        "Stops": [
+            "949"
+        ]
+    },
+    {
+        "Keyword": "Fire Escape",
+        "Stops": [
+            "noStop-29"
+        ]
+    },
+    {
+        "Keyword": "Mysterious Sidewalk",
+        "Stops": [
+            "noStop-29"
+        ]
+    },
+    {
+        "Keyword": "Political Sign",
+        "Stops": [
+            "1576"
+        ]
+    },
+    {
+        "Keyword": "Mysterious Shadow",
+        "Stops": [
+            "2731"
+        ]
+    },
+    {
+        "Keyword": "Occluded Sign",
+        "Stops": [
+            "1774",
+            "3211"
+        ]
+    },
+    {
+        "Keyword": "AC Unit",
+        "Stops": [
+            "3639"
+        ]
+    },
+    {
+        "Keyword": "Foam",
+        "Stops": [
+            "3639"
+        ]
+    },
+    {
+        "Keyword": "Ditch",
+        "Stops": [
+            "manchester"
+        ]
+    },
+    {
+        "Keyword": "Painful Memory",
+        "Stops": [
+            "manchester"
+        ]
+    },
+    {
+        "Keyword": "Generative AI",
+        "Stops": [
+            "1aBranch1"
+        ]
+    },
+    {
+        "Keyword": "Holly",
+        "Stops": [
+            "1aBranch1"
+        ]
+    },
+    {
+        "Keyword": "Reflection",
+        "Stops": [
+            "1aBranch1"
+        ]
+    },
+    {
+        "Keyword": "Transparency Play",
+        "Stops": [
+            "1aBranch1"
+        ]
+    },
+    {
+        "Keyword": "Dumpster",
+        "Stops": [
+            "2047"
+        ]
+    },
+    {
+        "Keyword": "Small Figures",
+        "Stops": [
+            "2047"
+        ]
+    },
+    {
+        "Keyword": "Stadium",
+        "Stops": [
+            "3833"
+        ]
+    },
+    {
+        "Keyword": "Trashcan",
+        "Stops": [
+            "2330"
+        ]
+    },
+    {
+        "Keyword": "Iconic Richmond",
+        "Stops": [
+            "1413"
+        ]
+    },
+    {
+        "Keyword": "Airplane",
+        "Stops": [
+            "3819"
+        ]
+    },
+    {
+        "Keyword": "Sun Itself",
+        "Stops": [
+            "3819"
+        ]
+    },
+    {
+        "Keyword": "Rent",
+        "Stops": [
+            "769"
+        ]
+    },
+    {
+        "Keyword": "Brand Visible",
+        "Stops": [
+            "3763"
+        ]
+    },
+    {
+        "Keyword": "Costco",
+        "Stops": [
+            "3763"
+        ]
+    },
+    {
+        "Keyword": "Ambulance",
+        "Stops": [
+            "1abranch3"
+        ]
+    },
+    {
+        "Keyword": "Mysterious Door",
+        "Stops": [
+            "1abranch3"
+        ]
+    },
+    {
+        "Keyword": "On Ground View",
+        "Stops": [
+            "1389"
         ]
     }
 ]
