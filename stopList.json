@@ -1,5 +1,19 @@
 [
     {
+        "Stop Number": "2114",
+        "keywords": [
+            "Color Pop",
+            "Fence",
+            "Fussy Composition",
+            "Mysterious Light",
+            "Raw Wood"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-29 17:28:29",
+        "Index": 6,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "3587",
         "keywords": [
             "Clouds",
@@ -84,6 +98,18 @@
         ],
         "Date Created": "2024-07-27 13:58:00",
         "Index": 439,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "3815",
+        "keywords": [
+            "AI Edits",
+            "Building Infrastructure",
+            "Dingy Buildings"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 16:58:24",
+        "Index": 23,
         "Footnotes": []
     },
     {
@@ -385,6 +411,19 @@
         ],
         "Date Created": "2024-04-20 14:46:13",
         "Index": 150,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "3584",
+        "keywords": [
+            "Architecture",
+            "Defunct Stop",
+            "Disused Buildings",
+            "Nice Clouds"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 12:19:47",
+        "Index": 17,
         "Footnotes": []
     },
     {
@@ -795,6 +834,19 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "404",
+        "keywords": [
+            "Corporate Stuff",
+            "Dead Tree",
+            "Occluded Buildings",
+            "Out Of Focus Ground"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 13:56:12",
+        "Index": 19,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "1609",
         "keywords": [
             "Car",
@@ -851,6 +903,14 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "1345",
+        "keywords": [],
+        "writing": [],
+        "Date Created": "2025-04-27 17:10:05",
+        "Index": 1214,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "1355",
         "keywords": [
             "Bush",
@@ -901,12 +961,7 @@
         ],
         "Date Created": "2024-07-18 08:31:19",
         "Index": 369,
-        "Footnotes": [
-            "[^1]: boy I have a lot to say about this one apparently.",
-            "[^2]: you bet.",
-            "[^3]: jeeze, yes!",
-            "[^4]: that's wild."
-        ]
+        "Footnotes": []
     },
     {
         "Stop Number": "1433",
@@ -1728,6 +1783,18 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "2113",
+        "keywords": [
+            "Bokeh",
+            "Bus Infrastructure",
+            "Sidewalk"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-29 17:30:50",
+        "Index": 7,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "58",
         "keywords": [
             "Clouds",
@@ -1948,56 +2015,7 @@
         ],
         "Date Created": "2024-04-22 18:14:41",
         "Index": 190,
-        "Footnotes": [
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here",
-            "[^1]: footenote here",
-            "[^2]: another one here",
-            "[^3]: another another another one here"
-        ]
+        "Footnotes": []
     },
     {
         "Stop Number": "775",
@@ -2216,6 +2234,14 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "2299",
+        "keywords": [],
+        "writing": [],
+        "Date Created": "2025-04-11 06:11:07",
+        "Index": 1206,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "3839",
         "keywords": [
             "Architecture",
@@ -2292,6 +2318,27 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "370",
+        "keywords": [],
+        "writing": [],
+        "Date Created": "2025-05-09 12:14:45",
+        "Index": 1221,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "1196",
+        "keywords": [
+            "Architecture",
+            "Dead Tree",
+            "Occluded Buildings",
+            "Small Figures"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 12:06:27",
+        "Index": 15,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "2169-2",
         "keywords": [
             "Markings",
@@ -2357,6 +2404,18 @@
         ],
         "Date Created": "2024-06-14 07:22:44",
         "Index": 312,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "3583",
+        "keywords": [
+            "Apartments",
+            "Close-up Grass",
+            "Ground Sign"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 12:25:28",
+        "Index": 18,
         "Footnotes": []
     },
     {
@@ -2553,6 +2612,19 @@
         ],
         "Date Created": "2024-07-26 05:42:09",
         "Index": 404,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "3902",
+        "keywords": [
+            "Corporate Stuff",
+            "Dead Tree",
+            "Guide Wire",
+            "Warbly Glass"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 14:40:47",
+        "Index": 21,
         "Footnotes": []
     },
     {
@@ -3218,6 +3290,17 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "499",
+        "keywords": [
+            "Broad Street",
+            "Uninteresting Building"
+        ],
+        "writing": [],
+        "Date Created": "2025-04-08 13:20:40",
+        "Index": 1198,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "3646",
         "keywords": [
             "Public Housing",
@@ -3322,6 +3405,21 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "2766",
+        "keywords": [
+            "Billboards",
+            "Ditch",
+            "Dumpster",
+            "Highway",
+            "Reshoot",
+            "Teardrop Flag"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-29 13:29:57",
+        "Index": 4,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "nostop-4",
         "keywords": [
             "Mysterious Light",
@@ -3417,6 +3515,18 @@
         ],
         "Date Created": "2024-07-29 16:33:14",
         "Index": 483,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "2767",
+        "keywords": [
+            "Asphalt",
+            "Fussy Composition",
+            "Guide Wire"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-29 13:23:17",
+        "Index": 2,
         "Footnotes": []
     },
     {
@@ -3579,6 +3689,21 @@
         ],
         "Date Created": "2024-07-26 08:20:16",
         "Index": 419,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "3900",
+        "keywords": [
+            "Blurry Car",
+            "Car",
+            "Dead Tree",
+            "Road Markings",
+            "Stoplights",
+            "Strands of Grass"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 09:47:43",
+        "Index": 12,
         "Footnotes": []
     },
     {
@@ -3942,6 +4067,18 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "3904",
+        "keywords": [
+            "Carwash",
+            "Dingy Buildings",
+            "Occluded Buildings"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 14:45:22",
+        "Index": 22,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "1726",
         "keywords": [
             "Electrical Box",
@@ -4140,6 +4277,18 @@
         ],
         "Date Created": "2024-07-18 10:39:11",
         "Index": 371,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "3440",
+        "keywords": [
+            "Bokeh",
+            "Bollard",
+            "Guide Wire"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 09:25:02",
+        "Index": 8,
         "Footnotes": []
     },
     {
@@ -4526,6 +4675,18 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "3898",
+        "keywords": [
+            "Backside of Street Signs",
+            "Long Shadow",
+            "Reshoot"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 09:38:40",
+        "Index": 11,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "1080",
         "keywords": [
             "Custom",
@@ -4827,6 +4988,19 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "3735",
+        "keywords": [
+            "Billboards",
+            "Church Sign",
+            "Mysterious Light",
+            "Shadow Field"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 09:27:27",
+        "Index": 9,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "1644",
         "keywords": [
             "Do Not Enter",
@@ -4920,6 +5094,14 @@
         ],
         "Date Created": "2024-07-27 14:16:33",
         "Index": 445,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "1477",
+        "keywords": [],
+        "writing": [],
+        "Date Created": "2025-05-11 16:01:12",
+        "Index": 1230,
         "Footnotes": []
     },
     {
@@ -5307,6 +5489,14 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "1476",
+        "keywords": [],
+        "writing": [],
+        "Date Created": "2025-05-11 15:52:46",
+        "Index": 1229,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "3507",
         "keywords": [
             "Clouds",
@@ -5540,6 +5730,20 @@
         ],
         "Date Created": "2024-06-11 15:41:36",
         "Index": 289,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "1110",
+        "keywords": [
+            "Backside of Street Signs",
+            "Pedestrian Walk Sign",
+            "Reshoot",
+            "Road Names",
+            "Stoplights"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 10:11:18",
+        "Index": 13,
         "Footnotes": []
     },
     {
@@ -5910,6 +6114,19 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "3896",
+        "keywords": [
+            "Backside of Street Signs",
+            "Billboards",
+            "Messages On Billboards",
+            "Out Of Focus Ground"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 09:36:12",
+        "Index": 10,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "2222",
         "keywords": [
             "Fence",
@@ -6067,6 +6284,20 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "1111",
+        "keywords": [
+            "Backside of Street Signs",
+            "Crosswalk",
+            "New Concrete",
+            "Reshoot",
+            "Road Markings"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 10:13:26",
+        "Index": 14,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "2424",
         "keywords": [
             "Birds",
@@ -6146,6 +6377,16 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "2197",
+        "keywords": [
+            "Tricolor"
+        ],
+        "writing": [],
+        "Date Created": "2025-04-27 17:07:37",
+        "Index": 1213,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "2168",
         "keywords": [
             "Corporate Stuff",
@@ -6190,6 +6431,20 @@
         ],
         "Date Created": "2024-04-20 14:55:27",
         "Index": 154,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "2632",
+        "keywords": [
+            "Asphalt",
+            "Car Vomit",
+            "Dead Tree",
+            "Fussy Composition",
+            "Trashcan"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-29 13:26:55",
+        "Index": 3,
         "Footnotes": []
     },
     {
@@ -6372,6 +6627,22 @@
         ],
         "Date Created": "2024-08-02 06:31:29",
         "Index": 503,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "442",
+        "keywords": [
+            "AI Edits",
+            "Architecture",
+            "Car",
+            "Construction",
+            "Manhole",
+            "Orange Sign",
+            "Powerlines"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-29 13:18:38",
+        "Index": 1,
         "Footnotes": []
     },
     {
@@ -6836,6 +7107,16 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "2379",
+        "keywords": [
+            "Tricolor"
+        ],
+        "writing": [],
+        "Date Created": "2025-04-08 13:18:08",
+        "Index": 1197,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "1116",
         "keywords": [
             "Asphalt",
@@ -6937,6 +7218,20 @@
         ],
         "Date Created": "2024-04-28 14:56:21",
         "Index": 254,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "535",
+        "keywords": [
+            "Car Vomit",
+            "Dead Tree",
+            "Reshoot",
+            "Road Markings",
+            "Stoplights"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 12:14:39",
+        "Index": 16,
         "Footnotes": []
     },
     {
@@ -7420,6 +7715,18 @@
         ],
         "Date Created": "2024-07-10 07:41:02",
         "Index": 329,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "2479",
+        "keywords": [
+            "Corporate Stuff",
+            "Foreboading Elements",
+            "Traffic Cone"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 17:03:26",
+        "Index": 24,
         "Footnotes": []
     },
     {
@@ -8111,6 +8418,28 @@
         "Footnotes": []
     },
     {
+        "Stop Number": "424",
+        "keywords": [
+            "Bokeh",
+            "Dead Tree",
+            "Flags",
+            "Out Of Focus Ground",
+            "Reshoot"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-30 13:59:07",
+        "Index": 20,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "342",
+        "keywords": [],
+        "writing": [],
+        "Date Created": "2025-04-11 06:05:16",
+        "Index": 1205,
+        "Footnotes": []
+    },
+    {
         "Stop Number": "3699-9",
         "keywords": [
             "Concrete",
@@ -8244,6 +8573,27 @@
         ],
         "Date Created": "2024-07-28 15:22:41",
         "Index": 474,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "431",
+        "keywords": [
+            "Bollard",
+            "Dead Tree",
+            "Shadow Field",
+            "Sidewalk"
+        ],
+        "writing": [],
+        "Date Created": "2024-01-29 13:49:26",
+        "Index": 5,
+        "Footnotes": []
+    },
+    {
+        "Stop Number": "380",
+        "keywords": [],
+        "writing": [],
+        "Date Created": "2025-05-09 12:17:20",
+        "Index": 1222,
         "Footnotes": []
     },
     {

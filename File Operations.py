@@ -5,6 +5,7 @@ from exiftool import ExifToolHelper
 from itertools import zip_longest
 import datetime
 import shutil
+from pprint import pprint
 
 sourceFilepath = "/Users/nicholasseitz/Pictures/Update Directory/"
 backupDir = "/Users/nicholasseitz/Documents/BusStopDirectoryBackup/"
@@ -145,7 +146,7 @@ def main():
 
     with ExifToolHelper() as et: # Metadata parsing function
         for files in os.listdir(sourceFilepath):
-            filePath = os.path.join(sourceFilepath + files)
+            filePath = os.path.join(sourceFilepath, files)
             fileName = os.path.splitext(files)
             if ".jpg" in files:
                 for d in et.get_tags([filePath], ["IPTC:Keywords", "IPTC:Caption-Abstract", "EXIF:DateTimeOriginal"]):
@@ -162,8 +163,8 @@ def main():
                         else:
                             fullKeys.append(kw)
                     photos[fileName[0]] = (Photo_Entity(stopNumber=fileName[0],stopKeywords=fullKeys, dateCreated=fullDate, index=index))
-                else:
-                    continue
+            else:
+                continue
 
     for k in photos.values(): # Create list of all keywords in photos
         for keyword in k.getAllKeywords():
@@ -172,13 +173,13 @@ def main():
     for k in photos.values(): # Create keyword objects dictionary or append keywords to existing objeect
             for keyword, stopNum in k.returnKeywordStopNumberPair():
                 if keyword not in keyDict:
-                    keyDict[keyword] = (Keyword_Entity(keyword, stopNum))
+                    keyDict[keyword] = (Keyword_Entity(keyword, stopNum)) # Change this to .title() when we're ready to rock :O 
                 else: 
                     keyDict.get(keyword).addStop(stopNum)
 
 
     for files in os.listdir(sourceFilepath): # Ingest existing writing for stop files
-        filepath = os.path.join(sourceFilepath + files)
+        filepath = os.path.join(sourceFilepath, files)
         if "Stop Number" in files: # Stop number ingest
             baseStop = files[12:]
             baseStop = baseStop[:-3]
@@ -243,60 +244,126 @@ def main():
                 return [prev_photo, next_photo]
         return [None, None]
 
-    for p in photos.values(): # Write photo files
-        with open(f"{sourceFilepath}Stop Number {p.getStopNumber()}.md", "w") as f:
-            f.write(f"# Stop {p.getStopNumber()}\n\n")
-            adjStops = get_neighbors(photos, p.stopNumber)
-            newLine = 0
-            if adjStops[0]:
-                f.write(f"Previous stop: [[Stop Number {adjStops[0]}]]")
-                newLine = 1
-                if adjStops[1]:
-                    f.write("\n")
+    fileGenerations = {}
+
+    for p in photos.values(): # Generate photo files
+        filename = f"Stop Number {p.stopNumber}.md"
+        fileLines = []
+        fileLines.append(f"# Stop {p.getStopNumber()}\n\n")
+        adjStops = get_neighbors(photos, p.stopNumber)
+        newLine = 0
+        if adjStops[0]:
+            fileLines.append(f"Previous stop: [[Stop Number {adjStops[0]}]]")
+            newLine = 1
             if adjStops[1]:
-                f.write(f"Next stop: [[Stop Number {adjStops[1]}]]")
-                newLine = 1
-            if newLine == 1:
-                f.write("\n\n")
-            f.write(f"![[{p.getStopNumber()}.jpg]]\n\n")
-            f.write(f"## Notes\n\n")
-            for ps in p.getPhotoWriting():
-                f.write(f"{ps}\n\n")
-            f.write(f"## Keywords\n\n")
-            for kw in p.getAllKeywords():
-                f.write(f"- [[{kw}]]\n")
-            if p.getFootnotes():
-                f.write("\n## Footnotes and Miscellany\n\n")
-                for fn in p.getFootnotes():
-                    f.write(f"{fn}\n\n")
+                fileLines.append("\n")
+        if adjStops[1]:
+            fileLines.append(f"Next stop: [[Stop Number {adjStops[1]}]]")
+            newLine = 1
+        if newLine == 1:
+            fileLines.append("\n\n")
+        fileLines.append(f"![[{p.getStopNumber()}.jpg]]\n\n")
+        fileLines.append(f"## Notes\n\n")
+        for ps in p.getPhotoWriting():
+            fileLines.append(f"{ps}\n\n")
+        fileLines.append(f"## Keywords\n\n")
+        for kw in p.getAllKeywords():
+            fileLines.append(f"- [[{kw}]]\n")
+        if p.getFootnotes():
+            fileLines.append("\n## Footnotes and Miscellany\n\n")
+            for fn in p.getFootnotes():
+                fileLines.append(f"{fn}\n\n")
+        fileGenerations[filename] = "".join(fileLines).rstrip("\n")
 
     for k in keyDict.values(): # Write keyword files
-        with open(f"{sourceFilepath}{k.getLabel()}.md", "w") as f:
-            f.write(f"# Stops referencing keyword {k.getLabel()}\n\n")
-            if not k.returnStops():
-                f.write("*No stops currently reference this keyword*\n\n")
-            for a,b in zip_longest(k.getKeywordWriting(), k.returnStops(), fillvalue=""):
-                if a:
-                    f.write(str(a) + "\n\n")
-                if b:
-                    f.write(f"![[{str(b)}.jpg]]\n[[Stop Number {str(b)}]]\n\n")
-            if k.getFootnotes():
-                f.write("\n## Footnotes and Miscellany\n\n")
-                for fn in k.getFootnotes():
-                    f.write(f"{fn}\n\n")
+        filename = f"{k.keywordLabel}.md"
+        fileLines = []
+        fileLines.append(f"# Stops referencing keyword {k.keywordLabel}\n")
+        if not k.returnStops():
+            fileLines.append("*No stops currently reference this keyword*\n\n")
+        for a,b in zip_longest(k.getKeywordWriting(), k.returnStops(), fillvalue=""):
+            if a:
+                fileLines.append(str(a) + "\n\n")
+            if b:
+                fileLines.append(f"![[{str(b)}.jpg]]\n[[Stop Number {str(b)}]]\n\n")
+        if k.getFootnotes():
+            fileLines.append("\n## Footnotes and Miscellany\n\n")
+            for fn in k.getFootnotes():
+                fileLines.append(f"{fn}\n\n")
+        fileGenerations[filename] = "".join(fileLines).rstrip("\n")
 
-    newFileDict = {}
+    newfiles = []
+    deletedLines = []
+    addedLines = []
+    moddedFile = []
 
-    for filename in os.listdir(sourceFilepath):
-        if filename.endswith(".md"):
-            filepath = os.path.join(sourceFilepath, filename)
-            with open(filepath, "r", encoding="utf-8") as f:
-                contents = f.read()
-            new_contents = contents.rstrip("\n")
-            with open(filepath, "w") as f:
-                f.write(new_contents)
-            newFileDict[filename] = new_contents
+    for filename, newContents in fileGenerations.items():
+        filepath = os.path.join(sourceFilepath, filename)
+        oldContents = existingFileDict.get(filename)           
+        if oldContents == newContents:
+            continue
+        else:
+            with open(filepath, "w", encoding="utf-8") as f:
+                f.write(newContents)
+            if oldContents is None:
+                newfiles.append(filename)
+            elif len(oldContents.splitlines()) > len(newContents.splitlines()):
+                deletedLines.append(filename)
+            elif len(oldContents.splitlines()) < len(newContents.splitlines()):
+                addedLines.append(filename)
+            else:
+                moddedFile.append(filename)
+
+    def appendFiles(files):
+        return "".join(f"{f}\n" for f in files)
+
+    def createChangelog():
+        fileLines = []
+        fileLines.append(f"Changelog for {nowString}\n\n== New Files ==\n\n")
+        fileLines.append(appendFiles(newfiles) + "\n\n")
+        fileLines.append("== Added Lines ==\n\n")
+        fileLines.append(appendFiles(addedLines) + "\n\n")
+        fileLines.append("== Deleted Lines ==\n\n")
+        fileLines.append(appendFiles(deletedLines) + "\n\n")
+        fileLines.append("== Modded Lines ==\n\n")
+        fileLines.append(appendFiles(moddedFile) + "\n\n")
+        fileContents = "".join(fileLines).rstrip("\n")
+        with open(f"{backupSubdir}/Changelog.txt", "w") as f:
+            f.write(fileContents)
     
+    def organize_backup(): # Currently, the conly complete chatGPT generated function because I was getting lazy at the end of developing this
+        # Could be worth studying this I guess, might be a good point to jump off of for refactoring the above changelog file generator
+        # and a general reference for file directory operations.
+
+        # Define categories and their associated file lists
+        categories = {
+            "New_Files": newfiles,
+            "Added_Lines": addedLines,
+            "Deleted_Lines": deletedLines,
+            "Modified_Files": moddedFile,
+        }
+
+        # Make subfolders for categories
+        for cat in categories:
+            os.makedirs(os.path.join(backupSubdir, cat), exist_ok=True)
+
+        # Move changed files into their categories
+        for cat, filelist in categories.items():
+            for filename in filelist:
+                src = os.path.join(backupSubdir, filename)
+                dst = os.path.join(backupSubdir, cat, filename)
+                if os.path.exists(src):   # only move if backup copy exists
+                    shutil.move(src, dst)
+
+        # Delete leftover (unchanged) .md files from backup root
+        for filename in os.listdir(backupSubdir):
+            filepath = os.path.join(backupSubdir, filename)
+            if filename.endswith(".md") and os.path.isfile(filepath):
+                os.remove(filepath)
+    
+    createChangelog()
+    organize_backup()
+
     # File comparator cleanup:
         # Iterate through markdown files in backup directory to list
         # Itereate through now existing files in live directory to list
