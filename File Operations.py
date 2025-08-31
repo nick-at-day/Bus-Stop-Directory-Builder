@@ -7,7 +7,7 @@ import datetime
 import shutil
 from pprint import pprint
 
-sourceFilepath = "/Users/nicholasseitz/Pictures/Update Directory/"
+sourceFilepath = "/Users/nicholasseitz/Pictures/testDirectory/Stops, Photos, and Keywords/"
 backupDir = "/Users/nicholasseitz/Documents/BusStopDirectoryBackup/"
 
 class Photo_Entity:
@@ -129,7 +129,7 @@ def main():
     existingFileDict = {}
 
     now = datetime.datetime.now()  
-    nowString = now.strftime("%Y-%m-%d_%H%M%S")
+    nowString = now.strftime("%Y-%m-%d %H %M %S")
 
     backupSubdir = os.path.join(backupDir, f"{nowString}_Backup")
     os.makedirs(backupSubdir, exist_ok=True)
@@ -139,7 +139,7 @@ def main():
             src = os.path.join(sourceFilepath, filename)
             dst = os.path.join(backupSubdir, filename)
             with open(src, "r", encoding="utf-8") as f:
-                existingFileDict[filename] = f.read()
+                existingFileDict[filename.lower()] = f.read()
             shutil.copy2(src, dst)   # copy2 preserves metadata
 
     print(f"Backup complete: {backupSubdir}")
@@ -155,25 +155,28 @@ def main():
                     index = int(d.get("IPTC:Caption-Abstract", ""))
                     fullDate =  datetime.datetime.strptime(dateTime, "%Y:%m:%d %H:%M:%S")
                     if isinstance(keywords, str):
-                        keywords = [keywords]
+                            if keywords.lower().startswith("onpage"):
+                                keywords = []
+                            else:
+                                keywords = [keywords.title()]
                     fullKeys = []
                     for kw in keywords:
-                        if kw in ("onPage", "Edited") or "_" in kw:
+                        if kw in ("onPage", "Edited", "") or "_" in kw:
                             continue
                         else:
-                            fullKeys.append(kw)
+                            fullKeys.append(kw.title())
                     photos[fileName[0]] = (Photo_Entity(stopNumber=fileName[0],stopKeywords=fullKeys, dateCreated=fullDate, index=index))
             else:
                 continue
 
     for k in photos.values(): # Create list of all keywords in photos
         for keyword in k.getAllKeywords():
-            all_keys.add(keyword)
+            all_keys.add(keyword.title())
 
     for k in photos.values(): # Create keyword objects dictionary or append keywords to existing objeect
             for keyword, stopNum in k.returnKeywordStopNumberPair():
                 if keyword not in keyDict:
-                    keyDict[keyword] = (Keyword_Entity(keyword, stopNum)) # Change this to .title() when we're ready to rock :O 
+                    keyDict[keyword] = (Keyword_Entity(keyword.title(), stopNum)) # Change this to .title() when we're ready to rock :O 
                 else: 
                     keyDict.get(keyword).addStop(stopNum)
 
@@ -209,15 +212,16 @@ def main():
                             continue
                 try:
                     photos[baseStop].ingestWriting(noteText, footnoteText)
-                except:
-                    print(f"Stop number: {baseStop} is not in collection")
+                except Exception as e:
+                    print(f"Stop number: {baseStop} is not in collection, {e}")
+
         elif ".md" in files: # Keyword file ingest
             baseKW = files[:-3]
             with open(filepath, "r") as f:
                 noteText = []
                 footnoteText = []
                 for lines in f.read().splitlines():
-                    if lines.strip().startswith(("[[", "![", "#")):
+                    if lines.strip().startswith(("*[[", "![[", "# ", "## Stops", "*No stops currently", "## Footnotes")):
                         continue 
                     if lines.strip():
                         if lines.strip().startswith("[^"):
@@ -225,9 +229,9 @@ def main():
                         else:
                             noteText.append(lines)
                 try: 
-                    keyDict[baseKW].ingestWriting(noteText, footnoteText)
+                    keyDict[baseKW.title()].ingestWriting(noteText, footnoteText)
                 except:
-                    keyDict[baseKW] = (Keyword_Entity(label=baseKW))
+                    keyDict[baseKW.title()] = (Keyword_Entity(label=baseKW.title()))
                     print (f"Keyword: {baseKW} does not appear in collection, creating empty keyword") # update this to be a bit safer... create a new keyword entity with the name and no stops, then add exception handling to the file writing class to add a "No stops referenced" message if there's nothing there.
 
             
@@ -249,7 +253,6 @@ def main():
     for p in photos.values(): # Generate photo files
         filename = f"Stop Number {p.stopNumber}.md"
         fileLines = []
-        fileLines.append(f"# Stop {p.getStopNumber()}\n\n")
         adjStops = get_neighbors(photos, p.stopNumber)
         newLine = 0
         if adjStops[0]:
@@ -278,14 +281,14 @@ def main():
     for k in keyDict.values(): # Write keyword files
         filename = f"{k.keywordLabel}.md"
         fileLines = []
-        fileLines.append(f"# Stops referencing keyword {k.keywordLabel}\n")
+        fileLines.append(f"# Stops with keyword {k.keywordLabel}\n\n")
         if not k.returnStops():
             fileLines.append("*No stops currently reference this keyword*\n\n")
         for a,b in zip_longest(k.getKeywordWriting(), k.returnStops(), fillvalue=""):
             if a:
                 fileLines.append(str(a) + "\n\n")
             if b:
-                fileLines.append(f"![[{str(b)}.jpg]]\n[[Stop Number {str(b)}]]\n\n")
+                fileLines.append(f"![[{str(b)}.jpg]]\n*[[Stop Number {str(b)}]]*\n\n")
         if k.getFootnotes():
             fileLines.append("\n## Footnotes and Miscellany\n\n")
             for fn in k.getFootnotes():
@@ -299,7 +302,7 @@ def main():
 
     for filename, newContents in fileGenerations.items():
         filepath = os.path.join(sourceFilepath, filename)
-        oldContents = existingFileDict.get(filename)           
+        oldContents = existingFileDict.get(filename.lower())           
         if oldContents == newContents:
             continue
         else:
@@ -335,9 +338,7 @@ def main():
         # Could be worth studying this I guess, might be a good point to jump off of for refactoring the above changelog file generator
         # and a general reference for file directory operations.
 
-        # Define categories and their associated file lists
         categories = {
-            "New_Files": newfiles,
             "Added_Lines": addedLines,
             "Deleted_Lines": deletedLines,
             "Modified_Files": moddedFile,
