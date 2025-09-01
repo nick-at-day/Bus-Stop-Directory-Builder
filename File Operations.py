@@ -7,7 +7,7 @@ import datetime
 import shutil
 from pprint import pprint
 
-sourceFilepath = "/Users/nicholasseitz/Pictures/testDirectory/Stops, Photos, and Keywords/"
+sourceFilepath = "/Users/nicholasseitz/Documents/Nicholas Seitz Vault/🚏 RVA Bus Stops/Stops, Photos, and Keywords/"
 backupDir = "/Users/nicholasseitz/Documents/BusStopDirectoryBackup/"
 
 class Photo_Entity:
@@ -221,7 +221,7 @@ def main():
                 noteText = []
                 footnoteText = []
                 for lines in f.read().splitlines():
-                    if lines.strip().startswith(("*[[", "![[", "# ", "## Stops", "*No stops currently", "## Footnotes")):
+                    if lines.strip().startswith((f"*[[", "![[", "# ", "## Stops with keyword {baseKW}", "*No stops currently reference this keyword*", "## Footnotes")):
                         continue 
                     if lines.strip():
                         if lines.strip().startswith("[^"):
@@ -231,8 +231,8 @@ def main():
                 try: 
                     keyDict[baseKW.title()].ingestWriting(noteText, footnoteText)
                 except:
-                    keyDict[baseKW.title()] = (Keyword_Entity(label=baseKW.title()))
-                    print (f"Keyword: {baseKW} does not appear in collection, creating empty keyword") # update this to be a bit safer... create a new keyword entity with the name and no stops, then add exception handling to the file writing class to add a "No stops referenced" message if there's nothing there.
+                    keyDict[baseKW.title()] = (Keyword_Entity(label=baseKW.title(), kwWriting=noteText, kwFootnote=footnoteText))
+                    print (f"Keyword: {baseKW} does not appear in collection, creating empty keyword")
 
             
     Photo_Entity.dumpToJson(photos)
@@ -295,10 +295,16 @@ def main():
                 fileLines.append(f"{fn}\n\n")
         fileGenerations[filename] = "".join(fileLines).rstrip("\n")
 
+    # initialize empty lists to receive the files sorted into different categories.
+    # used to both write the changelog and sort / maintain the backup directory.
+
     newfiles = []
     deletedLines = []
     addedLines = []
     moddedFile = []
+
+    deletedLinesLength = {}
+    addedLinesLength = {}
 
     for filename, newContents in fileGenerations.items():
         filepath = os.path.join(sourceFilepath, filename)
@@ -312,22 +318,36 @@ def main():
                 newfiles.append(filename)
             elif len(oldContents.splitlines()) > len(newContents.splitlines()):
                 deletedLines.append(filename)
+                deletedLinesLength[filename] = len(oldContents.splitlines()) - len(newContents.splitlines())
             elif len(oldContents.splitlines()) < len(newContents.splitlines()):
                 addedLines.append(filename)
+                addedLinesLength[filename] = len(newContents.splitlines()) - len(oldContents.splitlines())
             else:
                 moddedFile.append(filename)
 
     def appendFiles(files):
         return "".join(f"{f}\n" for f in files)
+    
+    def addCountedLines(files):
+        output = []
+        for x in files:
+            output.append(f"{x:<35} {addedLinesLength.get(x):>3} line(s) added\n")
+        return "".join(output).rstrip("\n")
+    
+    def addSubstractedLines(files):
+        output = []
+        for x in files:
+            output.append(f"{x:<35} {deletedLinesLength.get(x):>3} line(s) removed\n")
+        return "".join(output).rstrip("\n")
 
     def createChangelog():
         fileLines = []
         fileLines.append(f"Changelog for {nowString}\n\n== New Files ==\n\n")
         fileLines.append(appendFiles(newfiles) + "\n\n")
         fileLines.append("== Added Lines ==\n\n")
-        fileLines.append(appendFiles(addedLines) + "\n\n")
+        fileLines.append(addCountedLines(addedLines) + "\n\n")
         fileLines.append("== Deleted Lines ==\n\n")
-        fileLines.append(appendFiles(deletedLines) + "\n\n")
+        fileLines.append(addSubstractedLines(deletedLines) + "\n\n")
         fileLines.append("== Modded Lines ==\n\n")
         fileLines.append(appendFiles(moddedFile) + "\n\n")
         fileContents = "".join(fileLines).rstrip("\n")

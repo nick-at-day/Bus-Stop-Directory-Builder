@@ -959,7 +959,11 @@
     },
     {
         "Stop Number": "3745",
-        "keywords": [],
+        "keywords": [
+            "Monolith",
+            "Mysterious Object",
+            "Telephone Pole"
+        ],
         "writing": [],
         "Date Created": "2024-10-21 08:57:11",
         "Index": 818,
@@ -2785,8 +2789,9 @@
         "Stop Number": "417",
         "keywords": [
             "Mailbox",
+            "Mysterious Object",
             "Sign",
-            "Stop Sign"
+            "Street Vomit"
         ],
         "writing": [],
         "Date Created": "2024-11-11 20:55:56",
@@ -4268,7 +4273,11 @@
     },
     {
         "Stop Number": "882",
-        "keywords": [],
+        "keywords": [
+            "Contrast",
+            "Fence",
+            "Mysterious Object"
+        ],
         "writing": [],
         "Date Created": "2024-10-21 08:23:47",
         "Index": 809,
@@ -13147,7 +13156,12 @@
     },
     {
         "Stop Number": "3824",
-        "keywords": [],
+        "keywords": [
+            "Crosswalk",
+            "No Parking",
+            "Skyscraper",
+            "Wide Angle"
+        ],
         "writing": [],
         "Date Created": "2024-10-10 15:35:27",
         "Index": 794,
