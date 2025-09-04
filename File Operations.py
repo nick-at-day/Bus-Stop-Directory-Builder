@@ -221,7 +221,7 @@ def main():
                 noteText = []
                 footnoteText = []
                 for lines in f.read().splitlines():
-                    if lines.strip().startswith((f"*[[", "![[", "# ", "## Stops with keyword {baseKW}", "*No stops currently reference this keyword*", "## Footnotes")):
+                    if lines.strip().startswith((f"*[[", "![[", "# ", "## Stops Referencing", "# Stops with keyword {baseKW}", "*No stops currently reference this keyword*", "## Footnotes")):
                         continue 
                     if lines.strip():
                         if lines.strip().startswith("[^"):
